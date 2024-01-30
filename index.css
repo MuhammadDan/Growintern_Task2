@@ -1,0 +1,431 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    background-color: #0c111b;
+    position: relative;
+    font-family: roboto, sans-serif;
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 0 4%;
+    background: #0c111b;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+.brand_logo{
+   height: 70px;
+}
+.nav_link{
+    margin-top: 10px;
+    display: flex; /* is kai zaryai all li items beech mai agai hai */
+    list-style: none;
+}
+.nav_link a{
+    text-decoration: none;
+    margin-left: 20px; /*yai li items kai beech mai gap kai lyai kiya gaya hai  */
+    text-transform: capitalize;
+    color: #fff;
+    opacity: 0.9;
+}
+.diffheading a{
+    color: gold;
+    font-weight: 700;
+}
+.navrightcontainer{
+    display: block;
+    margin-left: auto;
+}
+.search_box{
+    border: none;
+    border-bottom: 1px solid #aaa; /*isai sirf search kai neechai wali line ai hai*/
+    outline: none;
+    background: transparent; /*isai searchbox ka background gayab hogaya hai*/
+    height: 30px;
+    color: #fff;
+    width: 250px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.search_box:focus{
+    width: 400px;
+    border-color: #1f80e0;
+}
+.subscribebtn{
+    background: #007FFF;
+    height: 30px;
+    padding: 0 20px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 0 10px;/*is kai zaryai subscribe aur login button mai gap aya hai*/
+}
+.loginbtn{
+    color: #fff;
+    /* text-transform: uppercase; */
+    opacity: 0.9;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.carousel_container{
+    position: relative;
+    width: 100%;
+    height: 450px;
+    padding: 20px 0px;/*padding-top: 20px padding-right:0px*/
+    overflow-x: hidden;
+    margin-top: 80px;
+}
+.carousel{
+    position: relative;
+    display: flex;
+    width: 92%;
+    height: 100%;
+    margin: auto;
+}
+.slider{
+  flex: 0 0 auto;
+  margin-right: 30px;
+  position: relative;
+  background: rgba(0,0,0,0.5);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  transition: 1s;
+  overflow: hidden;/*overflow hidden karnai sai pehlai */
+}
+.slider_image{
+    width: 70%;
+    min-height: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 80vh;
+    border-radius: 5px;
+}
+.slide_content{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 4;/*slide content pehlai hai aur slide image bath mai aur yai overlap kar rahai hai likn ap nai slide content ko zindex mai +ve value dai di hai to wo ab uper ajyega slide image ki.*/
+    background: linear-gradient(to right, #030b17 80%, #0c111b00);
+   /*isai adhi image dekhai gi aur half content dekhai ga*/
+    color: #fff;
+    display: flex;
+    margin-left: 0vh;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+   
+}
+.movie_title{
+    padding-left: 50px;
+    text-transform: capitalize;
+    margin-top: 80px;
+}
+.movie_description{
+    width: 80%;
+    line-height: 20px;
+    padding-left: 50px;
+    margin-top: 30px;
+    opacity: 0.8;
+}
+.vediocardcontainer{
+    position: relative;
+    width: 92%; 
+    margin: auto;/*automatic all box kai darmiyan margin honai chayai*/
+    height: 10vw;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.vediocard{
+    position: relative;
+    min-width: calc(100% / 5 - 10px);
+    /* min-width: 20%;isai har box ka width 20 20 hogaya */
+    width:  calc(100% / 5 - 10px);
+    /* width: 20%; */
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #030b17;
+}
+.vediocardvedios, .vediocardimage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.vediocardvedios{
+    position: absolute;
+}
+.vediocard:hover .vediocardimage{
+    display: none;
+}
+.title{
+    color: #fff;
+    opacity: 0.9;
+    padding-left: 4%;
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: 500; 
+}
+.movies_list{
+    width: 100%;
+    height: 220px;
+    position: relative;
+    margin: 10px 0 20px;/*margin-top:10px margin-right: 0px margin-left:0px margin-bottom:20px*/
+}
+.card_container{
+    position: relative;
+    width: 92%;
+    padding-left: 10px;
+    /* background-color: orange; */
+    height: 220px;
+    display: flex;/*all poster horizontal hogai*/
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+.card_container::-webkit-scrollbar{
+    display: none;/*scroll bar hat jata hai.*/
+}
+.card{
+    position: relative;
+    min-width: 150px;
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;/*all images mai gap*/
+    transition: 0.5s;
+}
+.posterimg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card:hover{
+    transform: scale(1.1);/*isai jab apka cursor image pai jyegi to image ka size increase hoga*/
+}
+.card:hover .cardbody{
+    opacity: 1;
+}
+.cardbody{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(4,8,15,0),#192133 90%);
+    padding: 10px;
+    transition: 0.5s;
+}
+.name{
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-top: 60%;
+    font-weight: 500;
+}
+.des{
+    color: #fff;
+    opacity: 0.8;
+    margin: 5px 0;/*top and bottom margin: 5px right and left margin:5px*/
+}
+.watchlistbtn{
+    position: relative;
+    width: 100%;
+    text-transform: capitalize;
+    background: none;
+    border: none;
+    font-weight: 500;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+.watchlistbtn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -9px;
+    height: 35px;
+    width: 35px;
+    background-image: url(./images/add.png);
+    background-size: cover;
+    transform: scale(0.4);
+}
+.watchlistbtn:hover{
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+.startbtn, .nextbtn{
+    position: absolute;
+    top: 0;
+    width: 5%;
+    height: 100px;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.startbtn{
+    left: 0;
+    background: linear-gradient(to right,#0c111b 0%,#0c111b00);
+}
+.nextbtn{
+    right: 0;
+    background: linear-gradient(to left, #0c111b 0%,#0c111b00);
+}
+
+.startbtn img, .nextbtn img{
+    width: 15px;
+    height: 20px;
+    opacity: 0;
+}
+
+.startbtn:hover img, .nextbtn:hover img{
+   opacity: 1;
+}
+.footer{
+    background-color: #040714;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer a{
+    color: #49c1f5;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .social_icons{
+    padding: 20px 0;
+}
+
+.footer .social_icons img{
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.footer .social_icons img:hover{
+    transform: scale(1.1);
+}
+
+.footer .disclaimer {
+    margin-top: 10px;
+    font-size: 0.75em; /* Smaller font size for disclaimer text */
+  }
+  @media screen and (max-width: 768px) {
+    .nav_link{
+       display: none;
+    }
+    .navrightcontainer{
+        margin-right: 0;
+    }
+    .search_box{
+        width: 200px;
+    }
+    .carousel_container{
+        height: 400px;
+    }
+    .carousel{
+        width: 100%;
+    }
+    .slide_content{
+        display: none;
+    }
+    .slider_image{
+        height: 80%;
+        margin-left: 5vh;
+        object-fit: cover; 
+        width: 100%;  
+    }
+}
+@media screen and (max-width: 500px) {
+  .nav_link{
+    display: none;
+  }   
+  .navrightcontainer{
+    margin-right: 0;
+  }
+  .login_container{
+    display: none;
+  }
+  .search_box{
+    width: 150px;
+  }
+  .carousel_container{
+    height: 300px;
+  }
+  .carousel{
+    width: 100%;
+  }
+  .slide_content{
+    display: none;
+}
+.slider_image{
+    height: 40%;
+    margin-left: 2vh;
+    background-size: cover;
+    /* object-fit: cover;  */
+    width: 100%;  
+}
+}
+@media screen and (max-width: 390px) {
+    .nav_link{
+        display: none;
+    }
+    .navrightcontainer{
+        margin-right: 0;
+      }
+    .search_box{
+      width: 100px;
+    }
+    .subscribebtn{
+        margin-right: 0;
+    }
+    .carousel_container{
+        height: 200px;
+    }
+    .carousel{
+        width: 100%;
+    }
+    .slide_content{
+        display: none;
+    }
+    .slider_image{
+        /* height: 40%;*/
+        margin-left: 1vh; 
+        background-size: cover;
+        /* object-fit: cover;  */
+        width: 100%;  
+    }
+} 
